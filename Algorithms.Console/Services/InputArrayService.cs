@@ -20,24 +20,24 @@ namespace Algorithms.ConsoleApp.Services
             return amount;
         }
 
-        public static int InputTypeArray()
-        {
-            Console.WriteLine("Enter type elements: ");
-            Console.WriteLine("1. int");
-            Console.WriteLine("2. double");
+        //public static int InputTypeArray()
+        //{
+        //    Console.WriteLine("Enter type elements: ");
+        //    Console.WriteLine("1. int");
+        //    Console.WriteLine("2. double");
 
-            var type = Convert.ToInt32(Console.ReadLine().Trim());
-            if (type <= 0 || type > 2)
-            {
-                throw new ArgumentException("Number can't be less or equals 0 and more than 2");
-            }
-            return type;
-        }
+        //    var type = Convert.ToInt32(Console.ReadLine().Trim());
+        //    if (type <= 0 || type > 2)
+        //    {
+        //        throw new ArgumentException("Number can't be less or equals 0 and more than 2");
+        //    }
+        //    return type;
+        //}
 
-        public static double[] InputGenerateDoubleArray()
-        {
-            return ArrayGenerator.GenerateDoubleArray(InputCountArray());
-        }
+        //public static double[] InputGenerateDoubleArray()
+        //{
+        //    return ArrayGenerator.GenerateDoubleArray(InputCountArray());
+        //}
 
         public static int[] InputGenerateIntArray()
         {
