@@ -8,7 +8,7 @@ namespace Algorithms.ConsoleApp.Services
 {
     internal class OutputService
     {
-        public static void OutputArrayLine(double[] array)
+        public static void OutputArrayLine(int[] array)
         {
             Console.WriteLine(string.Join(", ", array));
         }

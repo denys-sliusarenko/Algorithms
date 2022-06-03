@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.ConsoleApp.Services
 {
-    internal static class InputArrayService<T> where T : struct, IComparable<T>
+    internal static class InputArrayService
     {
         private static int InputCountArray()
         {
@@ -19,6 +19,32 @@ namespace Algorithms.ConsoleApp.Services
             }
             return amount;
         }
+
+        public static int InputTypeArray()
+        {
+            Console.WriteLine("Enter type elements: ");
+            Console.WriteLine("1. int");
+            Console.WriteLine("2. double");
+
+            var type = Convert.ToInt32(Console.ReadLine().Trim());
+            if (type <= 0 || type > 2)
+            {
+                throw new ArgumentException("Number can't be less or equals 0 and more than 2");
+            }
+            return type;
+        }
+
+        //public static T[] GenerateArray<T>()
+        //{
+        //    int type = InputTypeArray();
+        //    switch (type)
+        //    {
+        //        case 1: return InputGenerateIntArray();
+        //        case 2: return InputGenerateDoubleArray();
+        //        default:
+        //            throw new Exception();
+        //    }
+        //}
 
         public static double[] InputGenerateDoubleArray()
         {

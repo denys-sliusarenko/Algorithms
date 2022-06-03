@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Core.Sorting
 {
-    public interface ISortAlgorithm<T> where T : IComparable<T>
+    public interface ISortAlgorithm
     {
         string Name { get; }
-        T[] Sort(T[] array);
+        int[] Sort(int[] array);
     }
 }

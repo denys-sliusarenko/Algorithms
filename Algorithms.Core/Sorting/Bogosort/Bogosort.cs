@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Core.Sorting.Bogosort
 {
-    public class Bogosort<T> : ISortAlgorithm<T> where T : IComparable<T>
+    public class Bogosort: ISortAlgorithm
     {
         public string Name => "Bogosort";
 
-        public T[] Sort(T[] array)
+        public int[] Sort(int[] array)
         {
             while (!IsSorted(array))
             {
@@ -19,7 +19,7 @@ namespace Algorithms.Core.Sorting.Bogosort
             return array;
         }
 
-        private static bool IsSorted(T[] a)
+        private static bool IsSorted(int[] a)
         {
             for (int i = 0; i < a.Length - 1; i++)
             {
@@ -30,7 +30,7 @@ namespace Algorithms.Core.Sorting.Bogosort
             return true;
         }
 
-        private static T[] RandomPermutation(T[] a)
+        private static int[] RandomPermutation(int[] a)
         {
             Random random = new Random();
             var n = a.Length;
