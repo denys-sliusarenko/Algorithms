@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.ConsoleApp.Services
 {
-    internal static class InputService<T> where T : struct, IComparable<T>
+    internal static class InputArrayService<T> where T : struct, IComparable<T>
     {
         private static int InputCountArray()
         {

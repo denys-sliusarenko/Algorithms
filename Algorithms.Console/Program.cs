@@ -21,7 +21,7 @@ namespace Algorithms.ConsoleApp
                 var sort = SortingMenuItem.SortAlgorithms.Value[selectedAlgorithm];
 
 
-                double[] array = InputService<double>.InputGenerateDoubleArray();
+                double[] array = InputArrayService<double>.InputGenerateDoubleArray();
 
 
                 Console.WriteLine("Generated array: ");
