@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.Core.Sorting
+namespace Algorithms.ConsoleApp.Services
 {
-    public abstract class SortAlgorithm
+    internal static class InputService
     {
-        public abstract string Name { get; }
-        public abstract int[] Sort(int[] array);
-
-        public int[] GenerateArray()
+        public static int[] GenerateArray()
         {
-            Console.WriteLine(Name);
             Console.Write("Enter the number of array elements: ");
             var amount = Convert.ToInt32(Console.ReadLine().Trim());
             if (amount <= 0)
@@ -29,11 +25,6 @@ namespace Algorithms.Core.Sorting
             }
 
             return array;
-        }
-
-        public void OutputArray(int[] array)
-        {
-            Console.WriteLine(String.Join(", ", array));
         }
     }
 }

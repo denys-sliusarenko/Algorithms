@@ -6,16 +6,10 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Core.Sorting.BubbleSort
 {
-    public class BubbleSort : SortAlgorithm
+    public class BubbleSort: ISortAlgorithm
     {
-        public override string Name => "Bubble sort";
-
-        private static void Swap(ref int e1, ref int e2)
-        {
-            (e2, e1) = (e1, e2);
-        }
-
-        public override int[] Sort(int[] array)
+        public  string Name => "Bubble sort";
+        public  int[] Sort(int[] array)
         {
             var len = array.Length;
             for (var i = 1; i < len; i++)
@@ -30,6 +24,11 @@ namespace Algorithms.Core.Sorting.BubbleSort
             }
 
             return array;
+        }
+
+        private static void Swap(ref int e1, ref int e2)
+        {
+            (e2, e1) = (e1, e2);
         }
     }
 }

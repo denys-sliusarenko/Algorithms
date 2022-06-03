@@ -8,11 +8,11 @@ namespace Algorithms.Core.Sorting
 {
     public static class SortingMenuItem
     {
-        public static readonly Lazy<List<SortAlgorithm>> SortAlgorithms = new Lazy<List<SortAlgorithm>>(GetSortingAlgorithms);
+        public static readonly Lazy<List<ISortAlgorithm>> SortAlgorithms = new Lazy<List<ISortAlgorithm>>(GetSortingAlgorithms);
 
-        private static List<SortAlgorithm> GetSortingAlgorithms()
+        private static List<ISortAlgorithm> GetSortingAlgorithms()
         {
-            List<SortAlgorithm> algorithms = new List<SortAlgorithm>
+            List<ISortAlgorithm> algorithms = new List<ISortAlgorithm>
             {
                 new Bogosort.Bogosort(),
                 new BubbleSort.BubbleSort()

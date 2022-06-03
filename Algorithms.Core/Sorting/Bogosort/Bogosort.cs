@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Core.Sorting.Bogosort
 {
-    public class Bogosort : SortAlgorithm
+    public class Bogosort : ISortAlgorithm
     {
-        public override string Name => "Bogosort";
+        public string Name => "Bogosort";
+
+        public int[] Sort(int[] array)
+        {
+            while (!IsSorted(array))
+            {
+                array = RandomPermutation(array);
+            }
+            return array;
+        }
 
         private static bool IsSorted(int[] a)
         {
@@ -33,15 +42,6 @@ namespace Algorithms.Core.Sorting.Bogosort
             }
 
             return a;
-        }
-
-        public override int[] Sort(int[] array)
-        {
-            while (!IsSorted(array))
-            {
-                array = RandomPermutation(array);
-            }
-            return array;
         }
     }
 }

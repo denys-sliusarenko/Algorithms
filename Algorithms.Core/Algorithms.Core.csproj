@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\Bogosort\Bogosort.cs" />
     <Compile Include="Sorting\BubbleSort\BubbleSort.cs" />
-    <Compile Include="Sorting\SortAlgorithm.cs" />
+    <Compile Include="Sorting\ISortAlgorithm.cs" />
     <Compile Include="Sorting\SortingMenuItem.cs" />
   </ItemGroup>
   <ItemGroup />
