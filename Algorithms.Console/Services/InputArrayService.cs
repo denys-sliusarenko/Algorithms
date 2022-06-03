@@ -34,18 +34,6 @@ namespace Algorithms.ConsoleApp.Services
             return type;
         }
 
-        //public static T[] GenerateArray<T>()
-        //{
-        //    int type = InputTypeArray();
-        //    switch (type)
-        //    {
-        //        case 1: return InputGenerateIntArray();
-        //        case 2: return InputGenerateDoubleArray();
-        //        default:
-        //            throw new Exception();
-        //    }
-        //}
-
         public static double[] InputGenerateDoubleArray()
         {
             return ArrayGenerator.GenerateDoubleArray(InputCountArray());

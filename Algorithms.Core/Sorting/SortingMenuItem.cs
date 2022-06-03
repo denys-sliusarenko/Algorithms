@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Core.Sorting
 {
-    public static class SortingMenuItem<T> where T : IComparable<T>
+    public static class SortingMenuItem
     {
         public static readonly Lazy<List<ISortAlgorithm>> SortAlgorithms = new Lazy<List<ISortAlgorithm>>(GetSortingAlgorithms);
 
