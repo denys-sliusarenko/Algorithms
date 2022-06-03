@@ -9,7 +9,7 @@ namespace Algorithms.Core.Sorting
     public abstract class SortAlgorithm
     {
         protected abstract string Name { get; }
-        public abstract int[] Sort(int[] a);
+        public abstract int[] Sort(int[] array);
 
         public int[] GenerateArray()
         {
@@ -25,7 +25,7 @@ namespace Algorithms.Core.Sorting
             Random random = new Random();
             for (int i = 0; i < amount; i++)
             {
-                array[i] = random.Next(100)- random.Next(100);
+                array[i] = random.Next(100) - random.Next(100);
             }
 
             return array;

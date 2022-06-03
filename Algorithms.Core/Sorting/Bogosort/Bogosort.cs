@@ -29,21 +29,19 @@ namespace Algorithms.Core.Sorting.Bogosort
             {
                 n--;
                 var i = random.Next(n + 1);
-                var temp = a[i];
-                a[i] = a[n];
-                a[n] = temp;
+                (a[n], a[i]) = (a[i], a[n]);
             }
 
             return a;
         }
 
-        public override int[] Sort(int[] a)
+        public override int[] Sort(int[] array)
         {
-            while (!IsSorted(a))
+            while (!IsSorted(array))
             {
-                a = RandomPermutation(a);
+                array = RandomPermutation(array);
             }
-            return a;
+            return array;
         }
     }
 }
