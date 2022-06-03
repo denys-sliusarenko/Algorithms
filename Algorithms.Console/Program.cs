@@ -1,6 +1,5 @@
 ﻿using Algorithms.ConsoleApp.Services;
 using Algorithms.Core.Sorting;
-using Algorithms.Core.Sorting.Bogosort;
 using System;
 
 namespace Algorithms.ConsoleApp
@@ -21,15 +20,18 @@ namespace Algorithms.ConsoleApp
                 Console.WriteLine(selectedAlgorithm);
                 var sort = SortingMenuItem.SortAlgorithms.Value[selectedAlgorithm];
 
-                int[] array = InputService.GenerateArray();
+
+                double[] array = InputService<double>.InputGenerateDoubleArray();
+
+
                 Console.WriteLine("Generated array: ");
-                OutputService.OutputArray(array);
+                OutputService.OutputArrayLine(array);
                 array = sort.Sort(array);
 
                 Console.WriteLine("Sorting...");
 
                 Console.WriteLine("Sorted array: ");
-                OutputService.OutputArray(array);
+                OutputService.OutputArrayLine(array);
                 Console.ReadKey();
             }
             catch (Exception ex)

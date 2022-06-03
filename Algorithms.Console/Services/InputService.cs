@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Algorithms.ConsoleApp.Services
 {
-    internal static class InputService
+    internal static class InputService<T> where T : struct, IComparable<T>
     {
-        public static int[] GenerateArray()
+        private static int InputCountArray()
         {
             Console.Write("Enter the number of array elements: ");
             var amount = Convert.ToInt32(Console.ReadLine().Trim());
@@ -16,15 +17,17 @@ namespace Algorithms.ConsoleApp.Services
             {
                 throw new ArgumentException("Number can't be less or equals 0");
             }
-            var array = new int[amount];
+            return amount;
+        }
 
-            Random random = new Random();
-            for (int i = 0; i < amount; i++)
-            {
-                array[i] = random.Next(100) - random.Next(100);
-            }
+        public static double[] InputGenerateDoubleArray()
+        {
+            return ArrayGenerator.GenerateDoubleArray(InputCountArray());
+        }
 
-            return array;
+        public static int[] InputGenerateIntArray()
+        {
+            return ArrayGenerator.GenerateIntArray(InputCountArray());
         }
     }
 }
