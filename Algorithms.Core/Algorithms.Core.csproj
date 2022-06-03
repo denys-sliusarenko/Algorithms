@@ -45,6 +45,7 @@
     <Compile Include="Sorting\Bogosort\Bogosort.cs" />
     <Compile Include="Sorting\BubbleSort\BubbleSort.cs" />
     <Compile Include="Sorting\SortAlgorithm.cs" />
+    <Compile Include="Sorting\SortingMenuItem.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

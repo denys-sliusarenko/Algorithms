@@ -8,7 +8,7 @@ namespace Algorithms.Core.Sorting
 {
     public abstract class SortAlgorithm
     {
-        protected abstract string Name { get; }
+        public abstract string Name { get; }
         public abstract int[] Sort(int[] array);
 
         public int[] GenerateArray()

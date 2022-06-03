@@ -8,7 +8,7 @@ namespace Algorithms.Core.Sorting.Bogosort
 {
     public class Bogosort : SortAlgorithm
     {
-        protected override string Name => "Bogosort";
+        public override string Name => "Bogosort";
 
         private static bool IsSorted(int[] a)
         {

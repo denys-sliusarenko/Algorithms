@@ -10,7 +10,16 @@ namespace Algorithms.ConsoleApp
         {
             try
             {
-                SortAlgorithm sort = new Bogosort();
+                for (int i = 0; i < SortingMenuItem.SortAlgorithms.Value.Count; i++)
+                {
+                    Console.WriteLine(string.Concat(i, ".", SortingMenuItem.SortAlgorithms.Value[i].Name));
+                }
+
+                Console.Write("Select algorithm sort 0-{0}: ", SortingMenuItem.SortAlgorithms.Value.Count - 1);
+                var selectedAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
+                Console.WriteLine(selectedAlgorithm);
+                var sort = SortingMenuItem.SortAlgorithms.Value[selectedAlgorithm];
+
                 int[] array = sort.GenerateArray();
                 Console.WriteLine("Generated array: ");
                 sort.OutputArray(array);

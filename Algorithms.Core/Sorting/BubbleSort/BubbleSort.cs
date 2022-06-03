@@ -8,7 +8,7 @@ namespace Algorithms.Core.Sorting.BubbleSort
 {
     public class BubbleSort : SortAlgorithm
     {
-        protected override string Name => "Bubble sort";
+        public override string Name => "Bubble sort";
 
         private static void Swap(ref int e1, ref int e2)
         {
