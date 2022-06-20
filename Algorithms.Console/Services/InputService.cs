@@ -39,9 +39,22 @@ namespace Algorithms.ConsoleApp.Services
         //    return ArrayGenerator.GenerateDoubleArray(InputCountArray());
         //}
 
+        private static void InputSortedArray(int[] array)
+        {
+            Console.Write("Generate sorted array?(\"y\" - sorted, else not sorted): ");
+            var sorted = Console.ReadLine().Trim();
+            if (sorted == "y")
+            {
+                Array.Sort(array);
+            }
+        }
+
         public static int[] InputGenerateIntArray()
         {
-            return ArrayGenerator.GenerateIntArray(InputCountArray());
+            int count = InputCountArray();
+            int[] array = ArrayGenerator.GenerateIntArray(count);
+            InputSortedArray(array);
+            return array;
         }
     }
 }
