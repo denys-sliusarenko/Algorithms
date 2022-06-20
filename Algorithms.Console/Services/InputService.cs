@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.ConsoleApp.Services
 {
-    internal static class InputArrayService
+    internal static class InputService
     {
         private static int InputCountArray()
         {

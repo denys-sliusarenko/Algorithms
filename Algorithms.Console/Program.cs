@@ -29,7 +29,7 @@ namespace Algorithms.ConsoleApp
 
                             Console.Write("Select algorithm sort 0-{0}: ", SortingMenuItems.SortAlgorithms.Value.Count - 1);
                             var selectedSortAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-                            int[] array = InputArrayService.InputGenerateIntArray();
+                            int[] array = InputService.InputGenerateIntArray();
                             var sort = SortingMenuItems.SortAlgorithms.Value[selectedSortAlgorithm];
 
                             Console.WriteLine("Generated array: ");
@@ -49,7 +49,7 @@ namespace Algorithms.ConsoleApp
                                 Console.WriteLine(string.Concat(i, ".", SearchMenuItems.SearchAlgorithms.Value[i].Name));
                                 Console.Write("Select algorithm search 0-{0}: ", SearchMenuItems.SearchAlgorithms.Value.Count - 1);
                                 var selectedSearchAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-                                int[] array = InputArrayService.InputGenerateIntArray();
+                                int[] array = InputService.InputGenerateIntArray();
                                 var search = SearchMenuItems.SearchAlgorithms.Value[selectedSearchAlgorithm];
 
                                 Console.WriteLine("Generated array: ");
