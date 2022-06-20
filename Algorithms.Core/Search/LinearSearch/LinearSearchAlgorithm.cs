@@ -8,7 +8,7 @@ namespace Algorithms.Core.Search.LinearSearch
 {
     public class LinearSearchAlgorithm: ISearchAlgorithm
     {
-        public string Name => "LinearSearchAlgorithm";
+        public string Name => "Linear search";
 
         public int Search(int[] array, int key)
         {

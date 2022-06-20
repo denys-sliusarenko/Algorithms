@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayExtension.cs" />
     <Compile Include="ArrayGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\BinarySearch\BinarySearchAlgorithm.cs" />
     <Compile Include="Search\ISearchAlgorithm.cs" />
     <Compile Include="Search\LinearSearch\LinearSearchAlgorithm.cs" />
     <Compile Include="Sorting\BogoSort\BogoSort.cs" />

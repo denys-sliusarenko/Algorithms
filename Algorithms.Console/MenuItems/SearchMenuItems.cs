@@ -1,4 +1,5 @@
 ﻿using Algorithms.Core.Search;
+using Algorithms.Core.Search.BinarySearchAlgorithm;
 using Algorithms.Core.Search.LinearSearch;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Algorithms.ConsoleApp.MenuItems
             List<ISearchAlgorithm> algorithms = new List<ISearchAlgorithm>
             {
                 new LinearSearchAlgorithm(),
+                new BinarySearchAlgorithm()
             };
             return algorithms;
         }

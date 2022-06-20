@@ -8,7 +8,7 @@ namespace Algorithms.Core.Sorting.BogoSort
 {
     public class BogoSort: ISortAlgorithm
     {
-        public string Name => "Bogosort";
+        public string Name => "Bogo Sort";
 
         public int[] Sort(int[] array)
         {

@@ -46,31 +46,32 @@ namespace Algorithms.ConsoleApp
                             for (int i = 0; i < SearchMenuItems.SearchAlgorithms.Value.Count; i++)
                             {
                                 Console.WriteLine(string.Concat(i, ".", SearchMenuItems.SearchAlgorithms.Value[i].Name));
-                                Console.Write("Select algorithm search 0-{0}: ", SearchMenuItems.SearchAlgorithms.Value.Count - 1);
-                                var selectedSearchAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-                                int[] array = InputService.InputGenerateIntArray();
-                                var search = SearchMenuItems.SearchAlgorithms.Value[selectedSearchAlgorithm];
-
-                                Console.WriteLine("Generated array: ");
-                                OutputService.OutputArrayLine(array);
-
-                                Console.WriteLine("Enter search value: ");
-                                var searchValue = Convert.ToInt32(Console.ReadLine().Trim());
-
-
-                                Console.WriteLine("Search...");
-
-                                int searchIndexKey = search.Search(array, searchValue);
-
-                                if (searchIndexKey != -1)
-                                {
-                                    Console.WriteLine("Search value index: {0}", searchIndexKey);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Array doesn't have any numbers with value {0}", searchValue);
-                                }
                             }
+                            Console.Write("Select algorithm search 0-{0}: ", SearchMenuItems.SearchAlgorithms.Value.Count - 1);
+                            var selectedSearchAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
+                            int[] array = InputService.InputGenerateIntArray();
+                            var search = SearchMenuItems.SearchAlgorithms.Value[selectedSearchAlgorithm];
+
+                            Console.WriteLine("Generated array: ");
+                            OutputService.OutputArrayLine(array);
+
+                            Console.WriteLine("Enter search value: ");
+                            var searchValue = Convert.ToInt32(Console.ReadLine().Trim());
+
+
+                            Console.WriteLine("Search...");
+
+                            int searchIndexKey = search.Search(array, searchValue);
+
+                            if (searchIndexKey != -1)
+                            {
+                                Console.WriteLine("Search value index: {0}", searchIndexKey);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Array doesn't have any numbers with value {0}", searchValue);
+                            }
+
                             break;
                         }
                     default:
