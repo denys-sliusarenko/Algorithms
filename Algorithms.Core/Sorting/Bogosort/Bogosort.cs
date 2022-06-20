@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.Core.Sorting.Bogosort
+namespace Algorithms.Core.Sorting.BogoSort
 {
-    public class Bogosort: ISortAlgorithm
+    public class BogoSort: ISortAlgorithm
     {
         public string Name => "Bogosort";
 

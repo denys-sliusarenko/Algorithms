@@ -1,6 +1,7 @@
 ﻿using Algorithms.Core.Sorting;
-using Algorithms.Core.Sorting.Bogosort;
+using Algorithms.Core.Sorting.BogoSort;
 using Algorithms.Core.Sorting.BubbleSort;
+using Algorithms.Core.Sorting.ShakerSort;
 using System;
 using System.Collections.Generic;
 
@@ -15,8 +16,9 @@ namespace Algorithms.ConsoleApp.MenuItems
         {
             List<ISortAlgorithm> algorithms = new List<ISortAlgorithm>
             {
-                new Bogosort(),
-                new BubbleSort()
+                new BogoSort(),
+                new BubbleSort(),
+                new ShakerSort()
             };
             return algorithms;
         }

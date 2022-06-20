@@ -45,9 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\ISearchAlgorithm.cs" />
     <Compile Include="Search\LinearSearch\LinearSearchAlgorithm.cs" />
-    <Compile Include="Sorting\Bogosort\Bogosort.cs" />
+    <Compile Include="Sorting\BogoSort\BogoSort.cs" />
     <Compile Include="Sorting\BubbleSort\BubbleSort.cs" />
     <Compile Include="Sorting\ISortAlgorithm.cs" />
+    <Compile Include="Sorting\ShakerSort\ShakerSort.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

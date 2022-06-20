@@ -10,13 +10,12 @@ namespace Algorithms.ConsoleApp
         {
             try
             {
-                for (int i = 0; i < MainMenu .MenuItems.Value.Count; i++)
+                for (int i = 0; i < MainMenu.MenuItems.Value.Count; i++)
                 {
                     Console.WriteLine(string.Concat(i, ".", MainMenu.MenuItems.Value[i].Name));
                 }
                 Console.Write("Select algorithm type 0-{0}: ", MainMenu.MenuItems.Value.Count - 1);
                 var selectedAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-
 
                 switch (selectedAlgorithm)
                 {
@@ -42,7 +41,7 @@ namespace Algorithms.ConsoleApp
                             OutputService.OutputArrayLine(array);
                             break;
                         }
-                        case 1:
+                    case 1:
                         {
                             for (int i = 0; i < SearchMenuItems.SearchAlgorithms.Value.Count; i++)
                             {
@@ -57,8 +56,8 @@ namespace Algorithms.ConsoleApp
 
                                 Console.WriteLine("Enter search value: ");
                                 var searchValue = Convert.ToInt32(Console.ReadLine().Trim());
-                               
-                                
+
+
                                 Console.WriteLine("Search...");
 
                                 int searchIndexKey = search.Search(array, searchValue);
