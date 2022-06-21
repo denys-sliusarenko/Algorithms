@@ -98,6 +98,15 @@ namespace Algorithms.ConsoleApp
                            
                             var atbashDecrypt = algorithmer.Decrypt (builder, atbash);
 
+                            EncriptionAlgorithmBuilder builder1 = new XorEncriptionAlgorithmBuilder();
+                            //builder1.CreateEncriptionAlgorithm("hello    encrypt");
+                         //   builder1.SetPassword("1111");
+                         
+                            var xORCipher = algorithmer.Encrypt(builder1, "hello    encrypt","1111");
+                          //  builder1.CreateEncriptionAlgorithm(xORCipher);
+                           // builder1.SetPassword("1111");
+                           
+                            var xORCipher1 = algorithmer.Decrypt(builder1, xORCipher,"1111");
 
                             Console.Read();
 

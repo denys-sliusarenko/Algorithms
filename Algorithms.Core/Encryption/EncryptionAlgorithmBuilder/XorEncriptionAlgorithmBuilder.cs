@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Algorithms.Core.Encryption.EncryptionAlgorithmBuilder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.Core.Encryption.XORCipher
+namespace Algorithms.Core.Encryption.EncryptionAlgorithmBuilder
 {
-    public class XORCipher
+    public class XorEncriptionAlgorithmBuilder : EncriptionAlgorithmBuilder
     {
         private string GetRepeatKey(string s, int n)
         {
@@ -31,10 +32,19 @@ namespace Algorithms.Core.Encryption.XORCipher
             return res;
         }
 
-        public string Encrypt(string plainText, string password)
-            => Cipher(plainText, password);
+        public override void SetPassword(string password)
+        {
+            this.EncryptionAlgorithm.Password = password;
+        }
 
-        public string Decrypt(string encryptedText, string password)
-            => Cipher(encryptedText, password);
+        public override string Encrypt()
+        {
+            return Cipher(this.EncryptionAlgorithm.Message, this.EncryptionAlgorithm.Password);
+        }
+
+        public override string Decrypt()
+        {
+            return Cipher(this.EncryptionAlgorithm.Message, this.EncryptionAlgorithm.Password);
+        }
     }
 }

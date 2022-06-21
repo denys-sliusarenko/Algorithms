@@ -2,16 +2,16 @@
 {
     public class Algorithmer
     {
-        public string Encrypt(EncriptionAlgorithmBuilder encryptionAlgorithmBuilder,string message)
+        public string Encrypt(EncriptionAlgorithmBuilder encryptionAlgorithmBuilder,string message,string password="")
         {
             encryptionAlgorithmBuilder.CreateEncriptionAlgorithm(message);
-            encryptionAlgorithmBuilder.SetPassword();
+            encryptionAlgorithmBuilder.SetPassword(password);
             return encryptionAlgorithmBuilder.Encrypt();   
         }
-        public string Decrypt(EncriptionAlgorithmBuilder encryptionAlgorithmBuilder, string message)
+        public string Decrypt(EncriptionAlgorithmBuilder encryptionAlgorithmBuilder, string message, string password="")
         {
             encryptionAlgorithmBuilder.CreateEncriptionAlgorithm(message);
-            encryptionAlgorithmBuilder.SetPassword();
+            encryptionAlgorithmBuilder.SetPassword(password);
             return encryptionAlgorithmBuilder.Decrypt();
         }
     }

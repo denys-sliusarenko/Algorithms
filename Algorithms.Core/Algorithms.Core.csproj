@@ -49,7 +49,7 @@
     <Compile Include="Encryption\EncryptionAlgorithmBuilder\EncriptionAlgorithmBuilder.cs" />
     <Compile Include="Encryption\EncryptionAlgorithmBuilder\EncryptionAlgorithm.cs" />
     <Compile Include="Encryption\IEncryptionAlgorithm.cs" />
-    <Compile Include="Encryption\XORCipher\XORCipher.cs" />
+    <Compile Include="Encryption\EncryptionAlgorithmBuilder\XorEncriptionAlgorithmBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\BinarySearch\BinarySearchAlgorithm.cs" />
     <Compile Include="Search\ISearchAlgorithm.cs" />

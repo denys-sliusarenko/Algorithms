@@ -42,7 +42,7 @@
             return EncryptDecrypt(this.EncryptionAlgorithm.Message, Reverse(alphabet), alphabet);
         }
 
-        public override void SetPassword()
+        public override void SetPassword(string password)
         {
             //not use
         }

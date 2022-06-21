@@ -7,7 +7,7 @@
         {
             EncryptionAlgorithm = new EncryptionAlgorithm(message);
         }
-        public abstract void SetPassword();
+        public abstract void SetPassword(string password);
         public abstract string Encrypt();
         public abstract string Decrypt();
     }
