@@ -43,8 +43,13 @@
   <ItemGroup>
     <Compile Include="ArrayExtension.cs" />
     <Compile Include="ArrayGenerator.cs" />
-    <Compile Include="Encryption\Atbash.cs" />
+    <Compile Include="Encryption\Atbash\Atbash.cs" />
+    <Compile Include="Encryption\EncryptionAlgorithmBuilder\Algorithmer.cs" />
+    <Compile Include="Encryption\EncryptionAlgorithmBuilder\AtbashEncriptionAlgorithmBuilder.cs" />
+    <Compile Include="Encryption\EncryptionAlgorithmBuilder\EncriptionAlgorithmBuilder.cs" />
+    <Compile Include="Encryption\EncryptionAlgorithmBuilder\EncryptionAlgorithm.cs" />
     <Compile Include="Encryption\IEncryptionAlgorithm.cs" />
+    <Compile Include="Encryption\XORCipher\XORCipher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\BinarySearch\BinarySearchAlgorithm.cs" />
     <Compile Include="Search\ISearchAlgorithm.cs" />

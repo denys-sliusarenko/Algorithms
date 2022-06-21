@@ -1,4 +1,5 @@
 ﻿using Algorithms.Core.Encryption;
+//using Algorithms.Core.Encryption.Atbash;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Algorithms.ConsoleApp.MenuItems
         {
             List<IEncryptionAlgorithm> algorithms = new List<IEncryptionAlgorithm>
             {
-                new Atbash()
+             //   new Atbash()
             };
             return algorithms;
         }

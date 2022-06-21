@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms.Core.Encryption
+﻿namespace Algorithms.Core.Encryption.EncryptionAlgorithmBuilder
 {
-    public class Atbash: IEncryptionAlgorithm
+    public class AtbashEncriptionAlgorithmBuilder : EncriptionAlgorithmBuilder
     {
-        public string Name => "Atbash encrypt";
+        private const string alphabet = "abcdefghijklmnopqrstuvwxyz ";
 
-        //alphabet
-        private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-        //reverse text
         private string Reverse(string inputText)
         {
             var reversedText = string.Empty;
@@ -42,14 +32,19 @@ namespace Algorithms.Core.Encryption
             return outputText;
         }
 
-        public string Encrypt(string plainText)
+        public override string Encrypt()
         {
-            return EncryptDecrypt(plainText, alphabet, Reverse(alphabet));
+            return EncryptDecrypt(this.EncryptionAlgorithm.Message, alphabet, Reverse(alphabet));
         }
 
-        public string Decrypt(string encryptedText)
+        public override string Decrypt()
         {
-            return EncryptDecrypt(encryptedText, Reverse(alphabet), alphabet);
+            return EncryptDecrypt(this.EncryptionAlgorithm.Message, Reverse(alphabet), alphabet);
+        }
+
+        public override void SetPassword()
+        {
+            //not use
         }
     }
 }

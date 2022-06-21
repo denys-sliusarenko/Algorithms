@@ -1,5 +1,6 @@
 ﻿using Algorithms.ConsoleApp.MenuItems;
 using Algorithms.ConsoleApp.Services;
+using Algorithms.Core.Encryption.EncryptionAlgorithmBuilder;
 using System;
 
 namespace Algorithms.ConsoleApp
@@ -80,16 +81,26 @@ namespace Algorithms.ConsoleApp
                             {
                                 Console.WriteLine(string.Concat(i, ".", EncriptionMenuItems.EncryptionAlgorithms.Value[i].Name));
                             }
-                            Console.Write("Select algorithm encrypt 0-{0}: ", EncriptionMenuItems.EncryptionAlgorithms.Value.Count - 1);
-                            var selectedEncryptAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-                            var encrypt = EncriptionMenuItems.EncryptionAlgorithms.Value[selectedEncryptAlgorithm];
+                            //Console.Write("Select algorithm encrypt 0-{0}: ", EncriptionMenuItems.EncryptionAlgorithms.Value.Count - 1);
+                            //var selectedEncryptAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
+                            //var encrypt = EncriptionMenuItems.EncryptionAlgorithms.Value[selectedEncryptAlgorithm];
 
-                            Console.Write("Input text message: ");
-                            var message = Console.ReadLine();
-                            var encryptedMessage = encrypt.Encrypt(message);
-                            Console.WriteLine("Encrypted message: {0}", encryptedMessage);
-                            var decryptedMessage = encrypt.Decrypt(encryptedMessage);
-                            Console.WriteLine("Decrypted message: {0}", decryptedMessage);
+                            //Console.Write("Input text message: ");
+                            //var message = Console.ReadLine();
+                            //var encryptedMessage = encrypt.Encrypt(message);
+                            //Console.WriteLine("Encrypted message: {0}", encryptedMessage);
+                            //var decryptedMessage = encrypt.Decrypt(encryptedMessage);
+                            //Console.WriteLine("Decrypted message: {0}", decryptedMessage);
+
+                            Algorithmer algorithmer = new Algorithmer();
+                            EncriptionAlgorithmBuilder builder = new AtbashEncriptionAlgorithmBuilder();
+                            var atbash = algorithmer.Encrypt(builder, "hello    encrypt");
+                           
+                            var atbashDecrypt = algorithmer.Decrypt (builder, atbash);
+
+
+                            Console.Read();
+
                             break;
                         }
                     default:
