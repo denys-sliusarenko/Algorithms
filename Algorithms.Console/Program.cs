@@ -94,19 +94,26 @@ namespace Algorithms.ConsoleApp
 
                             Algorithmer algorithmer = new Algorithmer();
                             EncriptionAlgorithmBuilder builder = new AtbashEncriptionAlgorithmBuilder();
-                            var atbash = algorithmer.Encrypt(builder, "hello    encrypt");
-                           
-                            var atbashDecrypt = algorithmer.Decrypt (builder, atbash);
-
+                            var atbash = algorithmer.Encrypt(builder, "hello    encrypt").Encrypt() ;
+                         //  string f= atbash.Encrypt();
+                            var atbashDecrypt = algorithmer.Encrypt (builder, atbash).Decrypt ();
+                          //  atbashDecrypt.
                             EncriptionAlgorithmBuilder builder1 = new XorEncriptionAlgorithmBuilder();
-                            //builder1.CreateEncriptionAlgorithm("hello    encrypt");
-                         //   builder1.SetPassword("1111");
-                         
-                            var xORCipher = algorithmer.Encrypt(builder1, "hello    encrypt","1111");
-                          //  builder1.CreateEncriptionAlgorithm(xORCipher);
-                           // builder1.SetPassword("1111");
-                           
-                            var xORCipher1 = algorithmer.Decrypt(builder1, xORCipher,"1111");
+                            var Xor = algorithmer.Encrypt(builder1, "hello    encrypt");
+                            Xor.SetPassword("1111");
+                            var f=Xor.Encrypt();
+                             Xor = algorithmer.Encrypt(builder1, f);
+                            Xor.SetPassword("1111");
+
+
+                            var f2 =Xor.Decrypt();   
+                            //   builder1.SetPassword("1111");
+
+                            //  var xORCipher = algorithmer.Encrypt(builder1, "hello    encrypt","1111");
+                            //  builder1.CreateEncriptionAlgorithm(xORCipher);
+                            // builder1.SetPassword("1111");
+
+                            //   var xORCipher1 = algorithmer.Decrypt(builder1, xORCipher,"1111");
 
                             Console.Read();
 
