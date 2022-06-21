@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuItems\EncriptionMenuItems.cs" />
     <Compile Include="MenuItems\IMenuItem.cs" />
     <Compile Include="MenuItems\MainMenu.cs" />
     <Compile Include="MenuItems\SearchMenuItems.cs" />

@@ -47,6 +47,7 @@ namespace Algorithms.ConsoleApp
                             {
                                 Console.WriteLine(string.Concat(i, ".", SearchMenuItems.SearchAlgorithms.Value[i].Name));
                             }
+
                             Console.Write("Select algorithm search 0-{0}: ", SearchMenuItems.SearchAlgorithms.Value.Count - 1);
                             var selectedSearchAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
                             int[] array = InputService.InputGenerateIntArray();
@@ -57,7 +58,6 @@ namespace Algorithms.ConsoleApp
 
                             Console.WriteLine("Enter search value: ");
                             var searchValue = Convert.ToInt32(Console.ReadLine().Trim());
-
 
                             Console.WriteLine("Search...");
 
@@ -72,6 +72,24 @@ namespace Algorithms.ConsoleApp
                                 Console.WriteLine("Array doesn't have any numbers with value {0}", searchValue);
                             }
 
+                            break;
+                        }
+                    case 2:
+                        {
+                            for (int i = 0; i < EncriptionMenuItems.EncryptionAlgorithms.Value.Count; i++)
+                            {
+                                Console.WriteLine(string.Concat(i, ".", EncriptionMenuItems.EncryptionAlgorithms.Value[i].Name));
+                            }
+                            Console.Write("Select algorithm encrypt 0-{0}: ", EncriptionMenuItems.EncryptionAlgorithms.Value.Count - 1);
+                            var selectedEncryptAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
+                            var encrypt = EncriptionMenuItems.EncryptionAlgorithms.Value[selectedEncryptAlgorithm];
+
+                            Console.Write("Input text message: ");
+                            var message = Console.ReadLine();
+                            var encryptedMessage = encrypt.Encrypt(message);
+                            Console.WriteLine("Encrypted message: {0}", encryptedMessage);
+                            var decryptedMessage = encrypt.Decrypt(encryptedMessage);
+                            Console.WriteLine("Decrypted message: {0}", decryptedMessage);
                             break;
                         }
                     default:

@@ -15,7 +15,8 @@ namespace Algorithms.ConsoleApp.MenuItems
             List<IMenuItem> menuItems = new List<IMenuItem>
             {
                 new SortingMenuItems(),
-                new SearchMenuItems (),
+                new SearchMenuItems(),
+                new EncriptionMenuItems(),
             };
             return menuItems;
         }
