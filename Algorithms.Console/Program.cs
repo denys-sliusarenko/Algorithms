@@ -77,45 +77,50 @@ namespace Algorithms.ConsoleApp
                         }
                     case 2:
                         {
-                            for (int i = 0; i < EncriptionMenuItems.EncryptionAlgorithms.Value.Count; i++)
-                            {
-                                Console.WriteLine(string.Concat(i, ".", EncriptionMenuItems.EncryptionAlgorithms.Value[i].Name));
-                            }
-                            //Console.Write("Select algorithm encrypt 0-{0}: ", EncriptionMenuItems.EncryptionAlgorithms.Value.Count - 1);
-                            //var selectedEncryptAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
-                            //var encrypt = EncriptionMenuItems.EncryptionAlgorithms.Value[selectedEncryptAlgorithm];
+                            Console.WriteLine("1.Atbash");
+                            Console.WriteLine("2.Xor");
 
-                            //Console.Write("Input text message: ");
-                            //var message = Console.ReadLine();
-                            //var encryptedMessage = encrypt.Encrypt(message);
-                            //Console.WriteLine("Encrypted message: {0}", encryptedMessage);
-                            //var decryptedMessage = encrypt.Decrypt(encryptedMessage);
-                            //Console.WriteLine("Decrypted message: {0}", decryptedMessage);
-
+                            Console.Write("Select algorithm encrypt: ");
+                            var selectedEncryptAlgorithm = Convert.ToInt32(Console.ReadLine().Trim());
                             Algorithmer algorithmer = new Algorithmer();
-                            EncriptionAlgorithmBuilder builder = new AtbashEncriptionAlgorithmBuilder();
-                            var atbash = algorithmer.Encrypt(builder, "hello    encrypt").Encrypt() ;
-                         //  string f= atbash.Encrypt();
-                            var atbashDecrypt = algorithmer.Encrypt (builder, atbash).Decrypt ();
-                          //  atbashDecrypt.
-                            EncriptionAlgorithmBuilder builder1 = new XorEncriptionAlgorithmBuilder();
-                            var Xor = algorithmer.Encrypt(builder1, "hello    encrypt");
-                            Xor.SetPassword("1111");
-                            var f=Xor.Encrypt();
-                             Xor = algorithmer.Encrypt(builder1, f);
-                            Xor.SetPassword("1111");
+                            Console.Write("Input text message: ");
+                            var message = Console.ReadLine();
+                            string encrypt = string.Empty;
+                            string decrypt = string.Empty;
+
+                            switch (selectedEncryptAlgorithm)
+                            {
+                                case 1:
+                                    {
+                                        EncriptionAlgorithmBuilder builder = new AtbashEncriptionAlgorithmBuilder();
+                                        encrypt = algorithmer.Encrypt(builder, message).Encrypt();
+                                        decrypt = algorithmer.Encrypt(builder, encrypt).Decrypt();
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        Console.Write("Input text password: ");
+                                        var password = Console.ReadLine();
+                                        EncriptionAlgorithmBuilder builder= new XorEncriptionAlgorithmBuilder();
+                                        var Xor = algorithmer.Encrypt(builder , message );
+                                        Xor.SetPassword(password);
+                                         encrypt = Xor.Encrypt();
+                                        Xor = algorithmer.Encrypt(builder, encrypt);
+                                        Xor.SetPassword(password);
+                                        decrypt = Xor.Decrypt();              
+                                        break;
+                                    }
 
 
-                            var f2 =Xor.Decrypt();   
-                            //   builder1.SetPassword("1111");
+                                default:
+                                    {
+                                        throw new Exception();
+                                    }
+                            }
 
-                            //  var xORCipher = algorithmer.Encrypt(builder1, "hello    encrypt","1111");
-                            //  builder1.CreateEncriptionAlgorithm(xORCipher);
-                            // builder1.SetPassword("1111");
-
-                            //   var xORCipher1 = algorithmer.Decrypt(builder1, xORCipher,"1111");
-
-                            Console.Read();
+                            Console.WriteLine("Your's message: {0}", message);
+                            Console.WriteLine("Encrypt message: {0}", encrypt);
+                            Console.WriteLine("Decrypt message: {0}", decrypt);
 
                             break;
                         }
